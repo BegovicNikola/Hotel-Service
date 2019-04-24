@@ -22,15 +22,3 @@ export const GuestProvider = props => {
     </GuestContext.Provider>
   )
 }
-
-// export const GuestConsumer = GuestContext.Consumer
-
-// export function withGuestProvider(Component) {
-//   return function WrapperGuestProvider(props) {
-//     return (
-//       <GuestConsumer>
-//         {value => <Component {...props} {...value} />}
-//       </GuestConsumer>
-//     )
-//   }
-// }

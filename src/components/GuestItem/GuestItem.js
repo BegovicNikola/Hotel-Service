@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const GuestItem = props => {
   const { guest } = props
-  return <h1>{guest.name}</h1>
+  const [guestUpdate, setGuestUpdate] = useState(guest.name)
+  return (
+    <div>
+      <input
+        value={guestUpdate}
+        onChange={e => setGuestUpdate(e.target.value)}
+      />
+    </div>
+  )
 }
 
 export default GuestItem
