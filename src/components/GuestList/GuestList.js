@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { GuestContext } from '../../providers/GuestProvider'
 import GuestItem from '../GuestItem/GuestItem'
-import GuestTest from '../GuestItem/GuestTest'
 import loading from '../../assets/loading.gif'
 
 const GuestList = () => {
@@ -14,13 +13,6 @@ const GuestList = () => {
         <img src={loading} alt="loading" />
       ) : (
         <>
-          {guestList.map(guest => {
-            return (
-              <GuestTest key={guest.uuid} guest={guest}>
-                {guest.name}
-              </GuestTest>
-            )
-          })}
           {guestList.map(guest => {
             return (
               <GuestItem key={guest.uuid} guest={guest}>
