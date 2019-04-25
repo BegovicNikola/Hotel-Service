@@ -1,11 +1,21 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { GuestContext } from '../../providers/GuestProvider'
+import { DELETE_GUEST } from '../../providers/guestActionTypes'
 
 const GuestItem = props => {
-  const { guest } = props
-  const [guestName, setGuestName] = useState(guest.name)
+  const { guest, onClick } = props
+  const GuestInformation = useContext(GuestContext)
+  const { dispatch } = GuestInformation
+
   return (
     <div>
-      <input value={guestName} onChange={e => setGuestName(e.target.value)} />
+      <h1>{guest.name}</h1>
+      <button onClick={() => onClick(guest)}>Edit</button>
+      <button
+        onClick={() => dispatch({ type: DELETE_GUEST, payload: guest.uuid })}
+      >
+        Delete
+      </button>
     </div>
   )
 }
