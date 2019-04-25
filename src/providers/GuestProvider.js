@@ -2,7 +2,6 @@ import React, { useReducer, useEffect } from 'react'
 import {
   IS_LOADING,
   GET_GUESTS,
-  CREATE_GUEST,
   DELETE_GUEST,
   UPDATE_GUEST
 } from './guestActionTypes'
