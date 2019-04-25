@@ -1,32 +1,21 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { GuestContext } from '../../providers/GuestProvider'
-import { UPDATE_GUEST } from '../../providers/guestActionTypes'
+import { DELETE_GUEST } from '../../providers/guestActionTypes'
 
 const GuestItem = props => {
-  const { guest } = props
-  const [guestInformation, setGuestInformation] = useState(guest)
-  const GuestInfo = useContext(GuestContext)
-  const { dispatch } = GuestInfo
-  // console.log(guestInformation)
+  const { guest, onClick } = props
+  const GuestInformation = useContext(GuestContext)
+  const { dispatch } = GuestInformation
+
   return (
     <div>
-      <form
-        onSubmit={event => {
-          event.preventDefault()
-          console.log(guestInformation)
-          dispatch({ type: UPDATE_GUEST, payload: guestInformation })
-        }}
+      <h1>{guest.name}</h1>
+      <button onClick={() => onClick(guest)}>Edit</button>
+      <button
+        onClick={() => dispatch({ type: DELETE_GUEST, payload: guest.uuid })}
       >
-        <input
-          value={guestInformation.name}
-          onChange={e =>
-            setGuestInformation({ ...guestInformation, name: e.target.value })
-          }
-        />
-        <button className="btn btn-success" type="submit">
-          Update
-        </button>
-      </form>
+        Delete
+      </button>
     </div>
   )
 }
