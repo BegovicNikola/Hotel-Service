@@ -14,13 +14,13 @@ const GuestItem = props => {
       </h3>
       <div>
         <button className="btn btn-primary ml-2" onClick={() => onClick(guest)}>
-          Edit
+          <span className="fas fa-edit" />
         </button>
         <button
           className="btn btn-danger ml-2"
           onClick={() => dispatch({ type: DELETE_GUEST, payload: guest.uuid })}
         >
-          Delete
+          <span className="fas fa-trash-alt" />
         </button>
       </div>
     </div>

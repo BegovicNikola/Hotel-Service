@@ -46,9 +46,10 @@ const GuestModal = props => {
                 onChange={e => setGuestInformation({ ...guestInfo, room: e })}
               />
             </div>
-            <div className="col-12 mt-2">
+            <div className="col-4 mx-auto mt-2">
               <button className="btn btn-success form-control" type="submit">
-                Update
+                <span className="fas fa-check-circle" />
+                <span className="ml-1">Update</span>
               </button>
             </div>
           </div>
