@@ -3,6 +3,7 @@ import {
   IS_LOADING,
   GET_GUESTS,
   DELETE_GUEST,
+  CREATE_GUEST,
   UPDATE_GUEST
 } from './guestActionTypes'
 
@@ -29,6 +30,13 @@ const reducer = (state, action) => {
         guestList: state.guestList.filter(
           guest => guest.uuid !== action.payload
         )
+      }
+    }
+    case CREATE_GUEST: {
+      console.log({ state, action })
+      return {
+        ...state,
+        guestList: [action.payload, ...state.guestList]
       }
     }
     case UPDATE_GUEST: {
