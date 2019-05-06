@@ -8,14 +8,21 @@ const GuestItem = props => {
   const { dispatch } = GuestInformation
 
   return (
-    <div>
-      <h1>{guest.name}</h1>
-      <button onClick={() => onClick(guest)}>Edit</button>
-      <button
-        onClick={() => dispatch({ type: DELETE_GUEST, payload: guest.uuid })}
-      >
-        Delete
-      </button>
+    <div className="d-flex justify-content-between align-items-center border-bottom py-3">
+      <h3>
+        {guest.name} ({guest.room})
+      </h3>
+      <div>
+        <button className="btn btn-primary ml-2" onClick={() => onClick(guest)}>
+          Edit
+        </button>
+        <button
+          className="btn btn-danger ml-2"
+          onClick={() => dispatch({ type: DELETE_GUEST, payload: guest.uuid })}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   )
 }

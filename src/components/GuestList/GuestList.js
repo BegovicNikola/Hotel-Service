@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { GuestContext } from '../../providers/GuestProvider'
 import GuestItem from '../GuestItem/GuestItem'
-import GuestModal from '../GuestModal/GuestModal'
+import GuestModal from '../GuestEdit/GuestEdit'
 import loading from '../../assets/loading.gif'
 
 const GuestList = () => {

@@ -51,10 +51,34 @@ const initialState = {
 }
 
 const get_guests = [
-  { uuid: '1', name: 'John Doe', start: 1555941952, end: 1555942952 },
-  { uuid: '2', name: 'Jane Joe', start: 1555942952, end: 1555943952 },
-  { uuid: '3', name: 'Tim Pool', start: 1555943952, end: 1555944952 },
-  { uuid: '4', name: 'Jim Cast', start: 1555944952, end: 1555945952 }
+  {
+    uuid: '1',
+    name: 'John Doe',
+    room: 7,
+    start: 1555941952,
+    end: 1555942952
+  },
+  {
+    uuid: '2',
+    name: 'Jane Joe',
+    room: 3,
+    start: 1555942952,
+    end: 1555943952
+  },
+  {
+    uuid: '3',
+    name: 'Tim Pool',
+    room: 6,
+    start: 1555943952,
+    end: 1555944952
+  },
+  {
+    uuid: '4',
+    name: 'Jim Cast',
+    room: 12,
+    start: 1555944952,
+    end: 1555945952
+  }
 ]
 
 export const GuestProvider = props => {
