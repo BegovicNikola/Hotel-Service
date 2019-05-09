@@ -12,7 +12,9 @@ const GuestList = () => {
   return (
     <>
       {isLoading ? (
-        <img src={loading} alt="loading" />
+        <div className="d-flex align-items-center justify-content-center">
+          <img src={loading} alt="loading" />
+        </div>
       ) : (
         <>
           {guestList.map(guest => {

@@ -1,15 +1,17 @@
 import React, { useState, useContext } from 'react'
 import { GuestContext } from '../../providers/GuestProvider'
 import { CREATE_GUEST } from '../../providers/guestActionTypes'
-import { InputNumber } from 'antd'
+import { Input, InputNumber, DatePicker } from 'antd'
+
+const { RangePicker } = DatePicker
 
 const GuestAdd = () => {
   const [guestInfo, setGuestInformation] = useState({
     uuid: '123',
     name: '',
     room: null,
-    start: 1555941952,
-    end: 1555942952
+    start: '',
+    end: ''
   })
   const GuestInformation = useContext(GuestContext)
   const { dispatch } = GuestInformation
@@ -25,8 +27,9 @@ const GuestAdd = () => {
       >
         <div className="row">
           <div className="col-8">
-            <input
-              className="form-control"
+            <Input
+              className="w-100"
+              placeholder="Check-in Name"
               value={guestInfo.name}
               onChange={e =>
                 setGuestInformation({ ...guestInfo, name: e.target.value })
@@ -37,9 +40,24 @@ const GuestAdd = () => {
             <InputNumber
               min={1}
               max={60}
-              className="form-control"
+              className="w-100"
+              placeholder="Room Number"
               defaultValue={guestInfo.room}
               onChange={e => setGuestInformation({ ...guestInfo, room: e })}
+            />
+          </div>
+          <div className="col-12 mt-2">
+            <RangePicker
+              format="YYYY-MM-DD"
+              placeholder={['Check-in Date', 'Check-out Date']}
+              className="w-100"
+              onChange={(value, dateString) =>
+                setGuestInformation({
+                  ...guestInfo,
+                  start: dateString[0],
+                  end: dateString[1]
+                })
+              }
             />
           </div>
           <div className="col-4 mx-auto mt-2">

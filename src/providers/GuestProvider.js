@@ -63,29 +63,29 @@ const get_guests = [
     uuid: '1',
     name: 'John Doe',
     room: 7,
-    start: 1555941952,
-    end: 1555942952
+    start: '2019-05-01',
+    end: '2019-05-03'
   },
   {
     uuid: '2',
     name: 'Jane Joe',
     room: 3,
-    start: 1555942952,
-    end: 1555943952
+    start: '2019-05-02',
+    end: '2019-05-04'
   },
   {
     uuid: '3',
     name: 'Tim Pool',
     room: 6,
-    start: 1555943952,
-    end: 1555944952
+    start: '2019-05-01',
+    end: '2019-05-06'
   },
   {
     uuid: '4',
     name: 'Jim Cast',
     room: 12,
-    start: 1555944952,
-    end: 1555945952
+    start: '2019-05-04',
+    end: '2019-05-08'
   }
 ]
 
